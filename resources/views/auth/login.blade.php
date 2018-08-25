@@ -31,13 +31,13 @@
                                    class="form-control" required>
                         @endcomponent
 
-                        @if($isLocked)
+                        {{--@if($isLocked)
                         <div class="form-group row">
                             <div class="col-md-8 ml-auto">
                                 {!! Captcha::display() !!}
                             </div>
                         </div>
-                        @endif
+                        @endif--}}
 
                         <div class="form-group row">
                             <div class="col-md-8 ml-auto">
@@ -62,7 +62,7 @@
                         </div>
                     </form>
                     <div class="row justify-content-center">
-                        {!! $socialiteLinks !!}
+                    {{--{!! $socialiteLinks !!}--}}
                     </div>
                 </div>
             </div>
@@ -71,5 +71,5 @@
 @endsection
 
 @push('scripts')
-    {!! Captcha::script() !!}
+{{--{!! Captcha::script() !!}--}}
 @endpush

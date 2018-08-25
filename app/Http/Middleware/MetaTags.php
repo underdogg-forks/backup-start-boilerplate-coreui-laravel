@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Artesaos\SEOTools\Facades\SEOMeta;
+//use Artesaos\SEOTools\Facades\SEOMeta;
 use App\Repositories\Contracts\MetaRepository;
 
 class MetaTags
@@ -37,10 +37,11 @@ class MetaTags
 
         $meta = $this->metas->find($routeName);
 
-        if ($meta) {
+        /*if ($meta) {
             SEOMeta::setTitle($meta->title);
             SEOMeta::setDescription($meta->description);
         }
+        */
 
         return $next($request);
     }

@@ -10,7 +10,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    {!! SEOMeta::generate() !!}
+      {{--{!! SEOMeta::generate() !!}--}}
 
     @if (count(config('laravellocalization.supportedLocales')) > 1)
     @include('partials.alternates')

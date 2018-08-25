@@ -214,6 +214,18 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\ViewServiceProvider::class,
+
+        Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        HieuLe\Active\ActiveServiceProvider::class,
+        DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
+
+
+
+
+
+
+
     ],
 
     /*
@@ -261,5 +273,23 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+        'Active' => HieuLe\Active\Facades\Active::class,
+        'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
+
+
+
+
+
+
+
+
+
+
+
+
     ],
 ];

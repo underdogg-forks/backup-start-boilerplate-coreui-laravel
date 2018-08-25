@@ -1,15 +1,6 @@
-# Laravel BS4 Vue CoreUI Boilerplate
-> This is a Bootstrap 4 starter kit site with lite blogging feature, user account registration/management and full Vue CoreUI Backend based on Laravel 5.5, inspired by the popular [Laravel 5 Boilerplate](https://github.com/rappasoft/laravel-5-boilerplate). Unit & feature tests are not integrated yet, therefore this project isn't rock-solid for now. 
-
-[![Build Status](https://drone.pc-world.fr/api/badges/adr1enbe4udou1n/laravel-boilerplate/status.svg)](https://drone.pc-world.fr/adr1enbe4udou1n/laravel-boilerplate)
-[![StyleCI](https://styleci.io/repos/75558440/shield?style=flat&branch=master)](https://styleci.io/repos/75558440)
-[![License](https://poser.pugx.org/adr1enbe4udou1n/laravel-boilerplate/license?format=flat)](https://packagist.org/packages/adr1enbe4udou1n/laravel-boilerplate)
+# Laravel BS4 CoreUI Boilerplate
 
 ## Demo
-
-<p align="center">
-<img src="https://user-images.githubusercontent.com/3679080/31575365-959dcec4-b0e5-11e7-9ddb-6902cf25b87a.gif">
-</p>
 
 * Frontend demo : [https://laravel-boilerplate.pc-world.fr](https://laravel-boilerplate.pc-world.fr)
 * Backend demo : [https://laravel-boilerplate.pc-world.fr/admincp](https://laravel-boilerplate.pc-world.fr/admincp) (demo@example.com/demo, read-only)
@@ -60,25 +51,9 @@
 * Usage of [Laravel-Mediable](https://github.com/plank/laravel-mediable) package for orderable media model management, used for featured image on posts,
 * Permissions configuration based on config file rather than database,
 * Form types defined on config file for settings & submission support. This boilerplate include just one "contact form" type,
-* Custom webpack integration rather than laravel mix, for better flexibility (cf bellow),
+* Custom webpack integration rather than laravel mix, for better flexibility
 
 ## Install
-
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-1. `composer create-project --prefer-dist --stability=dev adr1enbe4udou1n/laravel-boilerplate my-new-project`
-2. Set database and environment variables from **.env.example**
-3. Set Web write permission if needed to `bootstrap/cache` and `storage` folders.
-4. Launch follow commands :
-
-### For Production :
-
-```shell
-composer install --no-dev --optimize-autoloader
-php artisan key:generate
-php artisan storage:link
-php artisan migrate --force
-```
 
 ### For Local/Development :
 
@@ -89,14 +64,6 @@ php artisan storage:link
 php artisan migrate [--seed]
 ```
 
-### Initialize search index for posts
-
-```shell
-php artisan scout:import "App\Models\Post"
-```
-
-Laravel Scout takes care of updating posts index on CUD operations.
-
 ### Backend access
 
 The first user to register will be automatically super admin with no restriction and will cannot be deletable.
@@ -106,11 +73,20 @@ Both frontend and backend have dedicated login pages.
 
 ### Compiling assets with Webpack
 
-1. Install dependencies with `yarn`
+1. Install dependencies with `yarn` (make sure it's installed, on Windows I started the cmd prompt with administrator privileges):
+```shell
+yarn
+```
+
+
 2. Launch `yarn dev` for compiling assets and start dev-server with HMR enabled
 
 > N1 : Use `yarn watch` if you prefer old school auto-building without HMR  
 > N2 : If assets modified, don't forget to launch `yarn prod` before deploy on each production environment.
+
+
+
+
 
 ### Permissions definitions
 
@@ -120,38 +96,3 @@ The mainly difference is that instead of store all permissions into specific SQL
 
 Indeed i feel this approach better for maintainability simply because permissions are hardly tied to the application with Laravel Authorization. This is anyway the standard way in CMS as Drupal where each module have specific config permission file. Permissions should be only owned by developers.
 
-### Note on Laravel Mix
-
-You will observe that this boilerplate does not use [Laravel Mix](https://github.com/JeffreyWay/laravel-mix) which is shipped in Laravel for all assets management.
-
-Laravel Mix still stay awesome for newcomers thanks to his laravel-like webpack fluent API, but, even if Laravel Mix can be easily overridden, for this project i preferred use my custom framework-free webpack setup in order to have total control of assets workflow.
-
-For instance, with this custom setup HMR work natively with configurable port and productions assets are bundled into specific "dist" directory.
-
-## TODO
-
-- [x] <s>Data seeds</s>
-- [x] <s>Batch actions</s>
-- [x] <s>Form & menu access helpers</s>
-- [x] <s>Metas management</s>
-- [x] <s>Permissions management</s>
-- [x] <s>Form submissions management</s>
-- [x] <s>Client validation with vee-validate</s>
-- [x] <s>301 redirection management with CSV/XLS import</s>
-- [x] <s>Export Datatables to CSV/Excel buttons</s>
-- [x] <s>Own account deletion</s>
-- [x] <s>Account language & timezone selection</s>
-- [x] <s>Account mail confirmation</s>
-- [x] <s>Account avatar</s>
-- [x] <s>Facebook/Twitter/Google Sign in with socialite package</s>
-- [x] <s>Blog system (posts, publication date, multilangue, HTML wysiwyg, tags, featured image, medias, public user profile)</s>
-- [x] <s>Dashboard</s>
-- [x] <s>Switch to full Bootstrap 4 beta for both Frontend & CoreUI Backend</s>
-- [x] <s>Migrate to 100% client-side Vue backend with vue-route</s>
-- [x] <s>Migrate to Bootstrap-Vue</s>
-- [x] <s>Webpack bundle size optimizations</s>
-- [ ] Inclusion of unit/featured/browser tests (stand by for now)
-
-## License
-
-This project is open-sourced software licensed under the [MIT license](https://adr1enbe4udou1n.mit-license.org).
